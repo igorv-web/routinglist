@@ -1,0 +1,79 @@
+<div class="top">
+  <input type="text" class="add-number" placeholder="Search number what you need" [(ngModel)]="filterBy">
+  <button type="button" class="btn btn-primary" (click)="openModal(template)">add number</button>
+</div>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Add number</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <input type="text" class="form-control" placeholder="First name" aria-label="Username"
+      aria-describedby="basic-addon1" [(ngModel)]="firstName">
+    <input type="text" class="form-control" placeholder="Last name" aria-label="Username"
+      aria-describedby="basic-addon1" [(ngModel)]="lastName">
+    <input type="text" class="form-control" placeholder="Number" aria-label="Username" aria-describedby="basic-addon1"
+      [(ngModel)]="number">
+    <button class="btn btn-success" (click)="addNumber()">Add</button>
+  </div>
+</ng-template>
+
+<div class="container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th [class.active]="order === 'info.name'" (click)="sortBy('first')">First Name
+          <span [hidden]="reverse">▼</span>
+          <span [hidden]="!reverse">▲</span>
+        </th>
+        <th [class.active]="order === 'info.name'" (click)="sortBy('last')">Last Name
+          <span [hidden]="reverse">▼</span>
+          <span [hidden]="!reverse">▲</span>
+        </th>
+        <th [class.active]="order === 'info.number'" (click)="sortBy('number')">Phone number
+          <span [hidden]="reverse">▼</span>
+          <span [hidden]="!reverse">▲</span>
+        </th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let elem of arr | filter: filterBy | sort: sortingColumn: isDesc; index as i">
+        <td>{{elem.first}}</td>
+        <td>{{elem.last}}</td>
+        <td>{{elem.number}}</td>
+        <td><button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            (click)="editNumber(i)">Edit</button></td>
+        <td><button class="btn btn-danger" (click)="deleteNumber(i)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div [hidden]="isHide" class="editor">
+  <div class="mb-3 row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">First Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputPassword" [(ngModel)]="saveFirst">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Last Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputPassword" [(ngModel)]="saveLast">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Number</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputPassword" [(ngModel)]="saveNum">
+    </div>
+    <div class="ff">
+      <button class="btn btn-success ms-3 mb-3" (click)="saveNumber()">Save changes</button>
+    </div>
+  </div>
+</div>

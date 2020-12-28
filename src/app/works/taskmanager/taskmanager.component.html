@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="content">
+    <input type="email" class="form-control" [(ngModel)]="value" id="exampleInputEmail1" aria-describedby="emailHelp" [class.red]="isRed">
+    <button (click)="addTask()" class="btn btn-success">add</button>
+  </div>
+</div>
+
+<div class="container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Task</th>
+        <th scope="col">Check</th>
+        <th scope="col">Done/In Progress</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let elem of arr;index as i">
+      <tr>
+        <th scope="row">{{i + 1}}</th>
+        <td>{{elem.name}}</td>
+        <td><input type="checkbox" (change)="active(i)"></td>
+        <td [class.colorGreen]="elem.status">{{elem.status? 'Done' : elem.progress}}</td>
+        <td><button class="btn btn-warning" (click)="editTask(i)">Edit</button></td>
+        <td><button class="btn btn-danger" (click)="deleteTask(i)" [disabled]="!elem.status">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="editor" [class]="isHide">
+  <input type="text" class="hiding" [(ngModel)]="save">
+  <button (click)="saveTask()"> Save </button>
+</div>

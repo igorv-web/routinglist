@@ -1,0 +1,36 @@
+.content {
+  margin-top: 30px;
+  display: flex;
+}
+
+input {
+  margin-right: 10px;
+}
+
+.table {
+  margin-top: 40px;
+}
+
+.red {
+  border: 2px solid rgb(255, 0, 0);
+}
+
+.editor {
+  margin-left: 43%;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.colorGreen {
+  color: green;
+}
+
+.colorRed {
+  color: red;
+}

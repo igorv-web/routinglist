@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>Bad words: <span class="badge badge-secondary" *ngFor="let el of arr">{{arr}}</span></h2>
+  <div class="first">
+    <input type="text" class="form-add" placeholder="Write bad words here..." [(ngModel)]="words" name="words" [class.red]="isRed">
+    <button type="button" class="btn btn-warning" id="btn-add" (click)="addWord()">add</button>
+    <button type="button" class="btn btn-danger" id="btn-reset" (click)="resetForm()">reset</button>
+  </div>
+  <div class="form-group">
+    <textarea class="form-control" [(ngModel)]="text" rows="3" placeholder="Write text here..."></textarea>
+  </div>
+  <button type="button" class="btn btn-success" (click)="cenzor()">Cenzor</button>
+</div>

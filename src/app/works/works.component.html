@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="[ '/home' ]">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="[ '/works/cenzor' ]">Cenzor</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="[ '/works/taskmanager' ]">Task Manager</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="[ '/works/phonemanager' ]">Phone Manager</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

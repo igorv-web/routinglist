@@ -1,0 +1,56 @@
+.top {
+  width: 85%;
+  height: 40px;
+  margin-left: 15%;
+  margin-top: 50px;
+  display: flex;
+}
+
+.add-number {
+  width: 70%;
+  margin-right: 15px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+.con-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.editor {
+  width: 50%;
+  height: 260px;
+  border: 1px solid #000;
+  padding: 15px;
+  border-radius: 5px;
+  margin-left: 25%;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+span {
+  visibility: hidden;
+}
+
+span {
+  visibility: visible;
+}
+
+.ff {
+  padding-left: 15px;
+}
