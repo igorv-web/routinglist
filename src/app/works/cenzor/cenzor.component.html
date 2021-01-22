@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Bad words: <span class="badge badge-secondary" *ngFor="let el of arr">{{arr}}</span></h2>
+  <h2>Bad words: <span class="badge badge-secondary" *ngFor="let el of arr">{{el}}</span></h2>
   <div class="first">
     <input type="text" class="form-add" placeholder="Write bad words here..." [(ngModel)]="words" name="words" [class.red]="isRed">
     <button type="button" class="btn btn-warning" id="btn-add" (click)="addWord()">add</button>
